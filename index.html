@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom handson</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        pre{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Dom</h1></center>
+    <h2>Q1.Write the code to access element which is having id as "text"</h2>
+     <!-- ans. -->
+     <pre>
+        <div id="text"> hello world</div>
+          
+        let C=document.getElementById("text")
+        console.log(C.innerText);
+    
+     </pre>
+
+     <h2>Q2. Write the code to access element which is having tag as "h1"</h2>
+      <h1>hello!!! </h1>
+       
+      <pre>
+        let x=document.getElementsByTagName("h1")
+        console.log(x[1]);
+      </pre>
+
+     <h2>Q3.Write the code to access element which is having class as "box"</h2>
+        <pre>
+            <div class="box">hello prepbytes</div>
+
+            let a=document.getElementsByClassName("box")
+            console.log(a);
+        </pre>
+
+        <h2>Q4. Change the heading from "Hello" to "Hello World" using DOM functions.</h2>
+           <h2 id="replace">hello!!</h2>
+     <pre>
+        let hello = document.getElementById("t1");
+        hello.innerText="Hello World";
+     </pre>
+
+       <h2>Q5.Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h2>
+       <div id="clock"></div>
+       <button id="button">start clock</button>
+       <pre>
+        let btn = document.getElementById("button");
+        let timer = document.getElementById("clock");
+    
+    
+        function timerfn(){
+            let time = new Date();
+            let hr = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            console.log(hr, min, sec);
+            // timer.innerText = `${hr}":"${min}":"${sec}`;
+            return `${hr}:${min}:${sec}`
+        };
+    
+        btn.addEventListener("click",function(){
+            timer.innerText = timerfn();
+            setInterval(function(){
+                timer.innerText = timerfn();
+            },1000)
+        })
+       </pre>
+
+        <h2>Q6. Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h2>
+
+         <div id="cards">
+            <div class="boxes">1</div>
+            <div class="boxes">2</div>
+            <div class="boxes">3</div>
+         </div>
+        <center> <button id="btn-col"> click Here</button></center>
+
+        <pre>let flex = document.getElementById("cards");
+            let btncol = document.getElementById("btn-col");
+    
+            btncol.addEventListener("click",function(){
+                flex.style.flexDirection="column";
+                flex.style.alignItems="center";
+            });</pre>
+
+        <h2>Q7. What’s the difference between window vs document?</h2>
+              <pre>
+                Document Object: The document object represent a web page that is loaded in the browser. By accessing the document object, we can access the element in the HTML page. With the help of document objects, we can add dynamic content to our web page. The document object can be accessed with a window.document or just document.
+
+                Syntax:
+        
+                document.property_name;
+        
+                Window Object: The window object is the topmost object of the DOM hierarchy. It represents a browser window or frame that displays the contents of the webpage. Whenever a window appears on the screen to display the contents of the document, the window object is created. 
+        
+                Syntax:
+        
+                window.property_name;
+              </pre>
+
+         <h2>Q8. "Hello" Add one style attribute and give text color as red and id attribute and give the id value as "heading" in the above given h1 tag using DOM functions.</h2>
+                
+                 <h1 id="heading" style="color: red;">"hello"</h1>
+                <pre>
+                let heading = document.getElementById("heading");
+                 heading.style.color="red"; 
+                </pre>
+
+        <h2>Q9. Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy".</h2>
+                <div id="hello">hello world</div>
+                 <button id="hellobutton"> replace text</button>
+                 <pre>
+                    let hell00 = document.getElementById("hello");
+                    let hellobtn = document.getElementById("hellobutton");
+        
+                    hellobtn.addEventListener("click",function(){
+                        hell00.innerText="Welcome to Elevation academy";
+                    });
+                 </pre>
+
+         <h2>Q10. Create a select drop down for selecting Year 20-21, 21-22 etc. Print the item text selected.</h2>
+        <div>
+            <select name="years" id="years">
+                <option>default</option>
+                <option value="1">18-19</option>
+                <option value="2">19-20</option>
+                <option value="3">20-21</option>
+                <option value="4">21-22</option>
+                <option value="5">22-23</option>
+            </select>
+        </div> 
+              <pre>
+                let year = document.getElementById("years");
+                year.addEventListener("click",function(){
+                    console.log(year.options[year.selectedIndex].innerHTML);
+                }); 
+              </pre>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

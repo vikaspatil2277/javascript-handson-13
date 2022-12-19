@@ -1,0 +1,26 @@
+/* 6 */
+
+#cards{
+
+    display: flex;
+    justify-content: center;
+}
+
+.boxes{
+    margin: 2%;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+
+/* 9 */
+#hellobutton{
+    height: 30px;
+    width: 100px;
+    background-color:green;
+    border: none;
+    border-radius: 10px;
+}
+
+
